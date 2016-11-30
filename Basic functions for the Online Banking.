@@ -1,0 +1,54 @@
+class SavingsAccount
+{
+	private double balance;
+	private double interest;
+	public SavingsAccount()
+	{
+		balance = 0;
+		interest = 0;
+	}
+	public SavingsAccount(double initialBalance, double initialInterest)
+	{
+		balance = initialBalance;
+		interest = initialInterest;
+	}
+	public void deposit(double amount)
+	{
+		balance = balance + amount;
+	}
+	public void withdraw(double amount)
+	{
+		balance = balance - amount;
+	}
+	public void addInterest()
+	{
+		balance = balance + balance * interest;
+	}
+	public double getBalance()
+	{
+		return balance;
+	}
+}
+class Account
+{
+	public static void main(String[] args)
+	{
+		SavingsAccount ramSavings = new SavingsAccount(10000, 0.10);
+		ramSavings.withdraw(2500);
+		ramSavings.deposit(4000);
+		ramSavings.addInterest();
+		System.out.println("Account Balance :  ");
+		System.out.println(ramSavings.getBalance());
+
+		
+	}
+}
+
+
+
+Output:
+     Account Balance : 
+      12650
+
+
+
